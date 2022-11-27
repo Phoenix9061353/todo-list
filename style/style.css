@@ -1,0 +1,160 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.hidden {
+  display: none;
+}
+
+.checked {
+  text-decoration: line-through;
+  opacity: 0.5;
+  text-decoration-thickness: 0.2rem;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, violet, lightblue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Remove the arrows of input type[number] */
+  /* Chrome, Safari, Edge, Opera */
+  /* Firefox */
+}
+body h1 {
+  color: white;
+  font-size: 3.5rem;
+  padding: 5rem 0rem;
+}
+body div.alert {
+  background-color: rgb(252, 101, 101);
+  padding: 0.5rem 2rem;
+  font-size: 1.25rem;
+  color: white;
+  font-weight: bolder;
+  border: 2px solid red;
+  border-radius: 10px;
+}
+body section.inputArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+body section.inputArea input {
+  font-size: 1.5rem;
+  padding: 0.25rem 0.5rem;
+  margin: 0rem 0.25rem;
+}
+body section.inputArea input[type=number] {
+  width: 50px;
+  text-align: center;
+}
+body section.inputArea button.add {
+  margin-left: 0.5rem;
+}
+body button.add,
+body button.sort {
+  padding: 0.25rem 0.5rem;
+  font-size: 1.5rem;
+  color: white;
+  background-color: rgb(216, 66, 216);
+  border: none;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+}
+body button.add:hover,
+body button.sort:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+body section.outputArea {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+body section.outputArea div.output {
+  margin-top: 2rem;
+}
+body section.outputArea div.output div.todo {
+  width: 30vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5rem 0rem;
+  transition: all 0.1 ease;
+}
+body section.outputArea div.output div.todo p {
+  font-family: "Noto Sans TC", sans-serif;
+  background-color: white;
+  color: black;
+  padding: 0.25rem 0.5rem;
+  align-items: center;
+  font-size: 1.5rem;
+}
+body section.outputArea div.output div.todo p.thing {
+  width: 50%;
+}
+body section.outputArea div.output div.todo p.time {
+  width: 30%;
+  text-align: center;
+}
+body section.outputArea div.output div.todo button {
+  color: white;
+  margin-left: 0.5rem;
+  width: 50px;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+}
+body section.outputArea div.output div.todo button.check {
+  background-color: rgb(42, 238, 42);
+}
+body section.outputArea div.output div.todo button.trash {
+  background-color: red;
+}
+body input::-webkit-outer-spin-button,
+body input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+body input[type=number] {
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+          appearance: textfield;
+}
+
+@-webkit-keyframes scaleUp {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes scaleDown {
+  to {
+    transform: scale(0);
+  }
+}
+@keyframes scaleDown {
+  to {
+    transform: scale(0);
+  }
+}/*# sourceMappingURL=style.css.map */
