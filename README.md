@@ -11,7 +11,4 @@ JavaScript, DOM, localStorage 的使用
 
 - 改變部分顯示內容的配色
 - 使「完成(Check)」的項目在沒有被刪除的情況下也會被加入 localStorage
-
-### 未來預計改善內容
-
-- 網頁的 RWD
+- 加入使用說明、RWD

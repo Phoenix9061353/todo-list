@@ -14,14 +14,14 @@
   text-decoration-thickness: 0.2rem;
 }
 
-body {
+main {
   min-height: 100vh;
   background: linear-gradient(135deg, violet, lightblue);
 
   display: flex;
   flex-direction: column;
-  //   justify-content: center;
   align-items: center;
+  position: relative;
 
   h1 {
     color: white;
@@ -41,14 +41,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     padding: 1rem;
+    .input-date {
+      display: inline-block;
+    }
     input {
       font-size: 1.5rem;
       padding: 0.25rem 0.5rem;
       margin: 0rem 0.25rem;
     }
     input[type='number'] {
-      width: 50px;
+      width: 3.125rem;
       text-align: center;
     }
     button.add {
@@ -82,7 +86,7 @@ body {
       margin-top: 2rem;
 
       div.todo {
-        width: 30vw;
+        width: 50vw;
 
         display: flex;
         align-items: center;
@@ -101,10 +105,12 @@ body {
         }
         p.thing {
           width: 50%;
+          padding-left: 1rem;
         }
         p.time {
           width: 25%;
-          text-align: center;
+          text-align: end;
+          padding-right: 1rem;
         }
         button {
           color: white;
@@ -140,6 +146,103 @@ body {
     appearance: textfield;
   }
 }
+//Open rule link
+.btn--rule {
+  &:link,
+  &:visited {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    border: 3px solid rgb(216, 66, 216);
+    transition: all 0.2s;
+    // box-shadow: inset 0 0 3px rgb(216, 66, 216);
+    // background-color: transparent;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+  }
+  &:hover {
+    background-color: rgb(216, 66, 216);
+  }
+}
+
+//Rule explain
+.rule {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  transition: all 0.2s;
+
+  opacity: 0;
+  visibility: hidden;
+
+  &__content {
+    width: 45vw;
+    height: 100vh;
+    padding: 3rem;
+    background-color: #fff;
+
+    position: relative;
+    transition: all 0.2s;
+    transform: translateX(-75%);
+    opacity: 0;
+    font-size: 1.2rem;
+  }
+
+  &__header {
+    font-size: 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  &__things {
+    padding-bottom: 0.75rem;
+
+    .extra__list {
+      margin-left: 1rem;
+      margin-top: 0.5rem;
+      .extra__things:not(:last-child) {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+  &__close {
+    &:link,
+    &:visited {
+      font-size: 3rem;
+      font-weight: 500;
+      text-decoration: none;
+      color: #333;
+      transition: all 0.2s;
+
+      position: absolute;
+      top: 0.75rem;
+      right: 2rem;
+    }
+
+    &:hover {
+      color: violet;
+    }
+  }
+
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+  &:target &__content {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 
 @keyframes scaleUp {
   from {
@@ -153,5 +256,63 @@ body {
 @keyframes scaleDown {
   to {
     transform: scale(0);
+  }
+}
+
+//Media query
+@media screen and (max-width: 800px) {
+  .rule__content {
+    width: 60vw;
+  }
+}
+@media screen and (max-width: 650px) {
+  html {
+    font-size: 80%;
+  }
+  main {
+    section.outputArea {
+      div.output {
+        div.todo {
+          width: 70vw;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  main {
+    section.inputArea {
+      input {
+        margin: 1rem 0.25rem;
+      }
+    }
+  }
+  .btn--rule {
+    &:link,
+    &:visited {
+      top: 0.75rem;
+      left: 0.75rem;
+    }
+  }
+  .rule__content {
+    width: 100vw;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  main {
+    section.inputArea {
+      input {
+        margin: 0.75rem 0.25rem;
+      }
+    }
+    section.outputArea {
+      div.output {
+        div.todo {
+          width: 85vw;
+        }
+      }
+    }
   }
 }

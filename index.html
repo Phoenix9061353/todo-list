@@ -21,32 +21,68 @@
     <link rel="stylesheet" href="./style/style.css" />
   </head>
   <body>
-    <h1>To Do List</h1>
-    <div class="alert hidden"></div>
-    <section class="inputArea">
-      <input type="text" name="name" id="name" placeholder="要做的事..." />
-      <input
-        type="number"
-        name="month"
-        id="month"
-        placeholder="M"
-        min="1"
-        max="12"
-      />
-      <input
-        type="number"
-        name="date"
-        id="date"
-        placeholder="D"
-        min="1"
-        max="31"
-      />
-      <button class="add">Add To List</button>
-    </section>
-    <section class="outputArea">
-      <button class="sort">Sort By Time</button>
-      <div class="output"></div>
-    </section>
+    <main id="main">
+      <h1>To Do List</h1>
+      <div class="alert hidden"></div>
+      <section class="inputArea">
+        <input type="text" name="name" id="name" placeholder="要做的事..." />
+        <div class="input-date">
+          <input
+            type="number"
+            name="month"
+            id="month"
+            placeholder="M"
+            min="1"
+            max="12"
+          />
+          <input
+            type="number"
+            name="date"
+            id="date"
+            placeholder="D"
+            min="1"
+            max="31"
+          />
+        </div>
+        <button class="add">Add To List</button>
+      </section>
+      <section class="outputArea">
+        <button class="sort">Sort By Time</button>
+        <div class="output"></div>
+      </section>
+    </main>
+    <a href="#rule" class="btn--rule">How to use</a>
+    <div class="rule" id="rule">
+      <div class="rule__content">
+        <a href="#main" class="rule__close">&times;</a>
+        <h3 class="rule__header">使用說明</h3>
+        <ul class="rule__list">
+          <li class="rule__things">
+            在輸入欄位依順序輸入「待辦事項」、「月」、「日」後，按下「Add To
+            List」加入清單中<br />&rarr;
+            如果輸入的日期不存在或無輸入內容時，畫面上會跳出提示框
+          </li>
+          <li class="rule__things">
+            在事項加入到清單後，後面會出現兩種按鈕：
+            <ul class="extra__list">
+              <li class="extra__things">
+                綠勾勾 &rarr; 按下後會將事項加上刪除線表示
+              </li>
+              <li class="extra__things">
+                紅垃圾桶 &rarr; 按下後會將事項直接從清單中移除
+              </li>
+            </ul>
+          </li>
+          <li class="rule__things">
+            「Sort By Time」：<br />按下後會將清單內事項依月份和日期重新排列顯示
+          </li>
+          <li class="rule__things">
+            加入清單內的事項會一直被保留於清單內，直至被移除<br />&rarr;
+            當沒有被移除時，即使重整頁面，該事項仍會存於清單中
+          </li>
+        </ul>
+      </div>
+    </div>
     <script src="./app.js"></script>
   </body>
 </html>
