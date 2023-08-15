@@ -164,7 +164,7 @@ const mergeSort = function (arr1, arr2) {
 };
 
 const mergeAlign = function (arr) {
-  if (arr.length === 0) return;
+  if (arr.length === 0 || arr === undefined) return [];
   if (arr.length === 1) return arr;
   else {
     let middle = Math.floor(arr.length / 2);
@@ -190,7 +190,6 @@ btnAdd.addEventListener('click', () => {
   thing = inputThing.value.trim();
   month = Number(inputMonth.value);
   date = Number(inputDate.value);
-  //   console.log(thing, month, date);
 
   //檢查輸入內容不為空白、數字部分為整數數字
   if (thing === '') {
